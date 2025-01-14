@@ -6,9 +6,7 @@
 }
 
 /*LAYOUT*/
-.d-flex {
-    display: flex;
-}
+
 
 /*HEADER*/
 nav {
@@ -17,4 +15,10 @@ nav {
 
 .title {
     color: rgb(255, 0, 0)
+}
+
+/*LIST-ITEMS*/
+.flag {
+    margin-left: 0.5rem;
+    vertical-align: middle;
 }

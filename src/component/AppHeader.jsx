@@ -35,7 +35,7 @@ const AppHeader = () => {
   return (
     <header>
       <nav>
-        <div className="d-flex">
+        <div className="">
           <h1 className="title">BOOLFLIX</h1>
           <input
             type="search"
