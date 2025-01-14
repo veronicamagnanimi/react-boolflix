@@ -1,5 +1,6 @@
 import GlobalContext from "./context/GlobalContext";
 import { useState } from "react";
+import AppHeader from "./component/AppHeader";
 
 function App() {
 //STATE
@@ -15,6 +16,7 @@ const globalProviderValue = {
   return (
     <>
      <GlobalContext.Provider value={globalProviderValue}>
+      <AppHeader />
      </GlobalContext.Provider>
     </>
   )
