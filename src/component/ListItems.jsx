@@ -1,6 +1,10 @@
+import { FaStar, FaRegStar } from "react-icons/fa";
+
 const ListItems = ({ list }) => {
 
-    return (
+    const stars = (vote) => Math.ceil(vote / 2);
+  
+     return (
       <div className="list">
         {list.length > 0 ? (
           list.map((item) => (
@@ -10,11 +14,23 @@ const ListItems = ({ list }) => {
               <p><strong>Lingua:</strong><img className="flag"src={
                 item.original_language === "en" ? "./public/en.png" : item.original_language === "it" ? "./public/it.png"
             : "./public/placeholder.png"} alt={`${item.original_language}`} style={{width: "1.6rem", height: "1.2rem"}} /></p>
-              <p><strong>Voto:</strong> {item.vote_average}</p>
+              <p><strong>Voto:</strong> <p className="star">{""} {(() => {
+                const starsVote = stars(item.vote_average); //calcolo le stelle piene
+                const starsElement = [];
+                for (let i = 0; i < 5; i++) {
+                    if (i < starsVote) {
+                        starsElement.push(<FaStar key={i} />);
+                    } else {
+                        starsElement.push(<FaRegStar key={i} />);
+                    }
+                }
+                return starsElement
+              })()}
+              </p></p>
             </div>
           ))
         ) : (
-          <p>Nessun risultato trovato</p>
+          <p>Cerca un film o una serie tv</p>
         )}
       </div>
     );
