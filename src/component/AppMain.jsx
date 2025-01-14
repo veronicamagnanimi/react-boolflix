@@ -7,14 +7,14 @@ const AppMain = () => {
   const {movies, series} = useContext(GlobalContext);
 
   return (
-    <main>
+    <main className="main">
         <div className="d-flex justify-content-between p-3">
-      <section>
-        <h2>Film</h2>
+      <section className="main-title">
+        <h2 className="mb-4">Film</h2>
         <ListItems list={movies} />
       </section>
-      <section>
-        <h2>Serie Tv</h2>
+      <section className="main-title">
+        <h2 className="mb-4">Serie Tv</h2>
         <ListItems list={series} />
       </section>
       </div>
@@ -23,3 +23,4 @@ const AppMain = () => {
 };
 
 export default AppMain;
+
