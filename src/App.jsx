@@ -6,13 +6,15 @@ import AppMain from "./component/AppMain";
 function App() {
 //STATE
 const [searchValue, setSearchValue] = useState("");
+const [movies, setMovies] = useState([]);
+const [series, setSeries] = useState([]);
 
 //API
 const apiUrl = "https://api.themoviedb.org/3/search"
 const apiKey = "4fc9382334271edcdf3039924423d9a6"
  
 const globalProviderValue = {
-  apiUrl, apiKey, searchValue, setSearchValue
+  apiUrl, apiKey, searchValue, setSearchValue, movies, setMovies, series, setSeries
 }
   return (
     <>
@@ -24,4 +26,4 @@ const globalProviderValue = {
   )
 }
 
-export default App
+export default App;
