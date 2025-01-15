@@ -19,7 +19,7 @@ const apiKey = "4fc9382334271edcdf3039924423d9a6"
  //CHIAMATA API PER I FILM
  const getContent = () => {
   setShowContent(true); //mostra i contenuti al click del bottone
-  
+
   axios
     .get(`${apiUrl}/movie`, {
       params: {
@@ -42,10 +42,17 @@ const apiKey = "4fc9382334271edcdf3039924423d9a6"
       setSeries(resp.data.results);
     });
 };
+
+//FUNZIONE ENTERKEY
+const handleEnterKey = () => {
+  if (event.key === "Enter") {
+    getContent();
+  }
+}
  
 const globalProviderValue = {
   apiUrl, apiKey, searchValue, setSearchValue, movies, setMovies, series, setSeries, getContent,
-  showContent }
+  showContent, handleEnterKey }
 
  return (
     <>

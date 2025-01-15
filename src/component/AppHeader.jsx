@@ -3,7 +3,7 @@ import GlobalContext from "../context/GlobalContext";
 
 const AppHeader = () => {
   //GLOBAL CONTEXT
-  const { getContent, searchValue, setSearchValue } = useContext(GlobalContext);
+  const { getContent, searchValue, setSearchValue, handleEnterKey } = useContext(GlobalContext);
 
   return (
     <header>
@@ -16,6 +16,7 @@ const AppHeader = () => {
             placeholder="  Titolo"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
+            onKeyUp={handleEnterKey}
           />
           <button onClick={getContent} className="button py-1">Search</button>
           </div>
