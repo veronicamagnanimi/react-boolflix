@@ -4,20 +4,28 @@ import GlobalContext from "../context/GlobalContext";
 
 const AppMain = () => {
   //STATE
-  const {movies, series} = useContext(GlobalContext);
+  const {movies, series, showContent} = useContext(GlobalContext);
 
   return (
     <main className="main">
-        <div className="d-flex justify-content-between p-3">
+      {!showContent ? (
+        <div className="welcome-main">
+          <h1 className="main-title">Benvenuto su <strong className="title">Boolflix!</strong>🎬</h1>
+          <h5 className="main-title">Cerca un film o una serie tv</h5>
+          </div>
+      ) : ( 
+<div className="d-flex">
       <section className="main-title">
-        <h2 className="mb-4">Film</h2>
+        <h2 className="card-title bg-secondary">Film🍿</h2>
         <ListItems list={movies} />
       </section>
       <section className="main-title">
-        <h2 className="mb-4">Serie Tv</h2>
+        <h2 className="card-title bg-secondary">Serie Tv🍿</h2>
         <ListItems list={series} />
       </section>
       </div>
+      )}
+        
     </main>
   );
 };

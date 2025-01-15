@@ -5,11 +5,12 @@ const ListItems = ({ list }) => {
   const stars = (vote) => Math.ceil(vote / 2);
 
   return (
-    <div className="list">
+    <div className="row">
       {list.map((item) => (
-        <div key={item.id} className="list-item">
+        <div key={item.id} className="col">
 
           {/* title + img */}
+          <div className="card">
           <h4>{item.title || item.name}</h4>{" "}
           <img src={`${imgCover}/w200/${item.poster_path}`} alt="" />
           <p>
@@ -53,6 +54,7 @@ const ListItems = ({ list }) => {
               })()}
             </p>
           </p>
+          </div>
         </div>
       ))}
     </div>

@@ -9,6 +9,7 @@
 nav {
     background-color: rgb(0, 0, 0);
     padding: 1.5rem;
+    height: 100px;
 }
 
 .title {
@@ -31,11 +32,24 @@ nav {
     display: inline-block;
 }
 
-.list {
+.row {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem; 
   }
+
+.col {
+    width: calc(96% / 3);
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 300px;
+}
 
 
 
@@ -46,8 +60,22 @@ nav {
 /*MAIN*/
 .main {
     background-color: rgb(40, 40, 40);
+    height: calc(100vh - 100px);
+    overflow: auto;
 }
 
 .main-title {
     color: rgb(0, 0, 0);
+}
+
+.welcome-main {
+  padding: 6.2rem;
+  text-align: center;
+}
+
+.card-title {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    border: 2px solid black;
 }

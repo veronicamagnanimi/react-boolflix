@@ -10,6 +10,7 @@ function App() {
 const [searchValue, setSearchValue] = useState("");
 const [movies, setMovies] = useState([]);
 const [series, setSeries] = useState([]);
+const [showContent, setShowContent] = useState(false);
 
 //API
 const apiUrl = "https://api.themoviedb.org/3/search"
@@ -17,6 +18,8 @@ const apiKey = "4fc9382334271edcdf3039924423d9a6"
 
  //CHIAMATA API PER I FILM
  const getContent = () => {
+  setShowContent(true); //mostra i contenuti al click del bottone
+  
   axios
     .get(`${apiUrl}/movie`, {
       params: {
@@ -41,8 +44,8 @@ const apiKey = "4fc9382334271edcdf3039924423d9a6"
 };
  
 const globalProviderValue = {
-  apiUrl, apiKey, searchValue, setSearchValue, movies, setMovies, series, setSeries, getContent
-}
+  apiUrl, apiKey, searchValue, setSearchValue, movies, setMovies, series, setSeries, getContent,
+  showContent }
 
  return (
     <>
