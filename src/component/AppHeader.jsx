@@ -1,36 +1,9 @@
 import { useContext } from "react";
-import axios from "axios";
 import GlobalContext from "../context/GlobalContext";
 
 const AppHeader = () => {
   //GLOBAL CONTEXT
-  const { apiUrl, apiKey, searchValue, setSearchValue, setMovies, setSeries } =
-    useContext(GlobalContext);
-
-  //CHIAMATA API PER I FILM
-  const getContent = () => {
-    axios
-      .get(`${apiUrl}/movie`, {
-        params: {
-          api_key: apiKey,
-          query: searchValue,
-        },
-      })
-      .then((resp) => {
-        setMovies(resp.data.results);
-      });
-    //CHIAMATA API SERIE TV
-    axios
-      .get(`${apiUrl}/tv`, {
-        params: {
-          api_key: apiKey,
-          query: searchValue,
-        },
-      })
-      .then((resp) => {
-        setSeries(resp.data.results);
-      });
-  };
+  const { getContent, searchValue, setSearchValue } = useContext(GlobalContext);
 
   return (
     <header>
