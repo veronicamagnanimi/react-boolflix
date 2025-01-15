@@ -10,8 +10,8 @@ const AppMain = () => {
     <main className="main">
       {!showContent ? (
         <div className="welcome-main">
-          <h1 className="main-title">Benvenuto su <strong className="title">Boolflix!</strong>🎬</h1>
-          <h5 className="main-title">Cerca un film o una serie tv</h5>
+          <h1 className="text-black">Benvenuto su <strong className="title">Boolflix!</strong>🎬</h1>
+          <h5 className="text-black">Cerca un film o una serie tv</h5>
           </div>
       ) : ( 
 <div className="d-flex">
