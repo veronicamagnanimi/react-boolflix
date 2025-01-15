@@ -11,7 +11,7 @@ const AppHeader = () => {
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="title">BOOLFLIX</h1>
           <div>
-          <input className="py-1"
+          <input className="text-input py-1"
             type="search"
             placeholder="  Titolo"
             value={searchValue}

@@ -16,8 +16,18 @@ nav {
   color: rgb(255, 0, 0);
 }
 
+.text-input {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  padding-left: 0.4rem;
+}
+
 .button {
   padding: 0.5rem;
+}
+
+.button:hover{
+  color: rgb(255, 0, 0)
 }
 
 /*LIST-ITEMS*/
